@@ -22,7 +22,9 @@ class RepoSearchViewController: UIViewController, UITableViewDataSource, UITable
         self.tableView.registerNib(UINib(nibName: "RepoSearchResultCell", bundle: NSBundle.mainBundle()), forCellReuseIdentifier: "SEARCH_RESULT_CELL")
         NetworkController.sharedInstance.repositorySearch(self.userInput, completionHandler:
         { (repoResults) -> (Void) in
+            self.tableView.dataSource = self
             self.searchResults = repoResults
+            self.tableView.reloadData()
         })
     }
 

@@ -62,5 +62,6 @@ class NetworkController
                 completionHandler(repoResults: repoResults)
             })
         })
+        dataTask.resume()
     }
 }
