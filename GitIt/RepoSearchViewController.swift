@@ -13,18 +13,22 @@ class RepoSearchViewController: UIViewController, UITableViewDataSource, UITable
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var tableView: UITableView!
     
-    var userInput = "tetris"
     var searchResults : [RepoSummary]?
 
     override func viewDidLoad()
     {
         super.viewDidLoad()
         self.tableView.registerNib(UINib(nibName: "RepoSearchResultCell", bundle: NSBundle.mainBundle()), forCellReuseIdentifier: "SEARCH_RESULT_CELL")
-        NetworkController.sharedInstance.repositorySearch(self.userInput, completionHandler:
-        { (repoResults) -> (Void) in
-            self.tableView.dataSource = self
-            self.searchResults = repoResults
-            self.tableView.reloadData()
+        self.searchBar.delegate = self
+    }
+    
+    func searchBarSearchButtonClicked(searchBar: UISearchBar)
+    {
+        NetworkController.sharedInstance.repositorySearch(searchBar.text, completionHandler:
+            { (repoResults) -> (Void) in
+                self.tableView.dataSource = self
+                self.searchResults = repoResults
+                self.tableView.reloadData()
         })
     }
 

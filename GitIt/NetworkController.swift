@@ -83,14 +83,10 @@ class NetworkController
                         println("The token is: \(self.token)")
                         
                         var configuration = NSURLSessionConfiguration.defaultSessionConfiguration()
-                        var myHTTPAdditionalHeaders : [NSObject : AnyObject] = ["Authorization" : "token OAUTH-TOKEN"]
+                        var myHTTPAdditionalHeaders : [NSObject : AnyObject] = ["Authorization" : "token \(self.token)"]
                         configuration.HTTPAdditionalHeaders = myHTTPAdditionalHeaders
                         self.session = NSURLSession(configuration: configuration)
                         
-                        NSOperationQueue.mainQueue().addOperationWithBlock(
-                        { () -> Void in
-                            
-                        })
                     default:
                         println("Default case on status code")
                     }
@@ -108,6 +104,7 @@ class NetworkController
     {
         let searchString = userInput.stringByReplacingOccurrencesOfString(" ", withString: "+", options: NSStringCompareOptions.LiteralSearch, range: nil)
         let searchURLString = self.apiURL + "/search/repositories?q=" + searchString
+        println(searchURLString)
         let searchURL = NSURL(string: searchURLString)
         
         let dataTask = self.session.dataTaskWithURL(searchURL, completionHandler:
@@ -115,6 +112,7 @@ class NetworkController
             var err: NSError?
             
             var jsonResult = NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.MutableContainers, error: &err) as NSDictionary
+            print(jsonResult)
             
             if err != nil
             {
@@ -140,5 +138,13 @@ class NetworkController
             })
         })
         dataTask.resume()
+    }
+    
+    func authenticateSession ()
+    {
+        var configuration = NSURLSessionConfiguration.defaultSessionConfiguration()
+        var myHTTPAdditionalHeaders : [NSObject : AnyObject] = ["Authorization" : "token \(self.token!)"]
+        configuration.HTTPAdditionalHeaders = myHTTPAdditionalHeaders
+        self.session = NSURLSession(configuration: configuration)
     }
 }

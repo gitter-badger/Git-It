@@ -28,6 +28,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         {
             println("Token value: \(value)")
             NetworkController.sharedInstance.token = value
+            NetworkController.sharedInstance.authenticateSession()
         }
         else
         {
