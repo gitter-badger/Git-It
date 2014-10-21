@@ -81,10 +81,10 @@
             </objects>
             <point key="canvasLocation" x="1099" y="-347"/>
         </scene>
-        <!--View Controller-->
+        <!--Profile View Controller-->
         <scene sceneID="tN8-y0-HvR">
             <objects>
-                <viewController id="fDI-vK-hzi" sceneMemberID="viewController">
+                <viewController id="fDI-vK-hzi" customClass="ProfileViewController" customModule="GitIt" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Cv6-eD-Kw6"/>
                         <viewControllerLayoutGuide type="bottom" id="fgs-dG-LLW"/>
@@ -97,7 +97,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mv8-nj-DYQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2231" y="218"/>
+            <point key="canvasLocation" x="2391" y="874"/>
         </scene>
         <!--Repo Search View Controller-->
         <scene sceneID="r9r-xa-2dA">
@@ -146,7 +146,7 @@
                     </connections>
                 </searchDisplayController>
             </objects>
-            <point key="canvasLocation" x="2231" y="-1092"/>
+            <point key="canvasLocation" x="2391" y="-628"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="u7D-zd-2Ur">
@@ -164,7 +164,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8ad-aA-S2z" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2231" y="-431"/>
+            <point key="canvasLocation" x="2391" y="33"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Rsv-0A-dfa">
@@ -220,6 +220,7 @@
                 <splitViewController id="LAm-h7-l2y" sceneMemberID="viewController">
                     <connections>
                         <segue destination="CE8-YV-j4b" kind="relationship" relationship="masterViewController" id="M7w-cq-Cki"/>
+                        <segue destination="fDI-vK-hzi" kind="relationship" relationship="detailViewController" id="vpY-LB-hH6"/>
                     </connections>
                 </splitViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8ck-xg-vZr" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -227,4 +228,7 @@
             <point key="canvasLocation" x="-441" y="-347"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="vpY-LB-hH6"/>
+    </inferredMetricsTieBreakers>
 </document>

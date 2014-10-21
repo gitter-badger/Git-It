@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		1658EA0E19F56C190062521C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1658EA0D19F56C190062521C /* AppDelegate.swift */; };
 		1658EA1119F56C190062521C /* GitIt.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 1658EA0F19F56C190062521C /* GitIt.xcdatamodeld */; };
-		1658EA1319F56C190062521C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1658EA1219F56C190062521C /* ViewController.swift */; };
+		1658EA1319F56C190062521C /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1658EA1219F56C190062521C /* ProfileViewController.swift */; };
 		1658EA1819F56C190062521C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1658EA1719F56C190062521C /* Images.xcassets */; };
 		1658EA1B19F56C190062521C /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1658EA1919F56C190062521C /* LaunchScreen.xib */; };
 		1658EA2719F56C190062521C /* GitItTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1658EA2619F56C190062521C /* GitItTests.swift */; };
@@ -37,7 +37,7 @@
 		1658EA0C19F56C190062521C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1658EA0D19F56C190062521C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1658EA1019F56C190062521C /* GitIt.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = GitIt.xcdatamodel; sourceTree = "<group>"; };
-		1658EA1219F56C190062521C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		1658EA1219F56C190062521C /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		1658EA1719F56C190062521C /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		1658EA1A19F56C190062521C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		1658EA2019F56C190062521C /* GitItTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GitItTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -127,10 +127,10 @@
 		1658EA3019F56F460062521C /* Controller Layer */ = {
 			isa = PBXGroup;
 			children = (
-				1658EA1219F56C190062521C /* ViewController.swift */,
 				1658EA3119F570600062521C /* SplitViewContainerController.swift */,
 				1658EA3519F5A3670062521C /* NetworkController.swift */,
 				1658EA3A19F5C7130062521C /* RepoSearchViewController.swift */,
+				1658EA1219F56C190062521C /* ProfileViewController.swift */,
 			);
 			name = "Controller Layer";
 			sourceTree = "<group>";
@@ -260,7 +260,7 @@
 			files = (
 				1658EA4119F60FBD0062521C /* RepoSummary.swift in Sources */,
 				1658EA3619F5A3670062521C /* NetworkController.swift in Sources */,
-				1658EA1319F56C190062521C /* ViewController.swift in Sources */,
+				1658EA1319F56C190062521C /* ProfileViewController.swift in Sources */,
 				1658EA3E19F5CA160062521C /* RepoSearchResultCell.swift in Sources */,
 				1658EA0E19F56C190062521C /* AppDelegate.swift in Sources */,
 				1658EA1119F56C190062521C /* GitIt.xcdatamodeld in Sources */,
@@ -459,6 +459,7 @@
 				1658EA2C19F56C190062521C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		1658EA2D19F56C190062521C /* Build configuration list for PBXNativeTarget "GitItTests" */ = {
 			isa = XCConfigurationList;
@@ -467,6 +468,7 @@
 				1658EA2F19F56C190062521C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

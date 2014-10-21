@@ -13,10 +13,26 @@ import CoreData
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
+    
+    func application(application: UIApplication, openURL url: NSURL, sourceApplication: String, annotation: AnyObject?) -> Bool
+    {
+        NetworkController.sharedInstance.handleOAuthURL(url)
+        return true
+    }
 
 
-    func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-        // Override point for customization after application launch.
+    func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool
+    {
+        let defaultsTokenKey = "token"
+        if let value = NSUserDefaults.standardUserDefaults().valueForKey(defaultsTokenKey) as? String
+        {
+            println("Token value: \(value)")
+            NetworkController.sharedInstance.token = value
+        }
+        else
+        {
+            NetworkController.sharedInstance.requestOAuthAccess()
+        }
         return true
     }
 
